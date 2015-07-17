@@ -1,11 +1,11 @@
 // Create a variable that holds your name
-var myName = "";
+var myName = "Brendon Pierson";
 
 // Create an object that holds your personal information
 var myInfo = {
-  age: 0,
-  last_company: "",
-  marital_status: "",
+  age: 25,
+  last_company: "mnps",
+  marital_status: "single",
   spouse: ""
 };
 
@@ -21,11 +21,28 @@ var Eliminator = {
   number_of_hits: 4
 };
 
+var BeTheVoid = {
+  name: "Be The Void",
+  artist: "Dr. Dog",
+  year: 2012,
+  sales: 1000000,
+  number_of_hits: 5
+}
+
+var BornToRun = {
+  name: "Born to Run",
+  artist: "Bruce Springsteen",
+  year: 1975,
+  sales: 5000000,
+  number_of_hits: 10
+}
+
 // Create an array that holds records
 var recordArray = [Eliminator];
 
 // Add at least two more album objects to the array
-
+recordArray[recordArray.length] = BeTheVoid;
+recordArray[recordArray.length] = BornToRun;
 
 
 /*
@@ -35,8 +52,8 @@ two arguments.
   1. album - The name of the album
   2. rating - A numeric rating from 1-10
 */
-var ??? = function () {
-  // Add the rating to the album
+var ratingAdd = function (album, rate) {
+  album.rating = rate;
 };
 
 /*
@@ -45,8 +62,8 @@ array and adds the same rating (of your choice)
 to each one.
 */
 var modifyAlbums = function () {
-  for () {
-    someFunction(???, ???);
+  for (var i = 0; i < recordArray.length; i++) {
+    ratingAdd(recordArray[i], 5);
   }
 };
 
@@ -57,7 +74,7 @@ modifyAlbums();
 console.log(recordArray);
 
 // Display the new array in the browser
-var recordDom = document.getElementById(???);
+var recordDom = document.getElementById("records");
 
 /*
  JSON.stringify() is a built-in function
