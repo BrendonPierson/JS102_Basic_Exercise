@@ -13,29 +13,19 @@ var myInfo = {
 myInfo.name = myName;
 
 // Create another object that represents a record/album
-var Eliminator = {
-  name: "Eliminator",
-  artist: "ZZ Top",
-  year: 1981,
-  sales: 11000000,
-  number_of_hits: 4
-};
 
-var BeTheVoid = {
-  name: "Be The Void",
-  artist: "Dr. Dog",
-  year: 2012,
-  sales: 1000000,
-  number_of_hits: 5
+var Album = function(name, artist, year, sales, number_of_hits) {
+  this.name = name,
+  this.artist = artist,
+  this.year = year,
+  this.sales = sales,
+  this.number_of_hits = number_of_hits
 }
 
-var BornToRun = {
-  name: "Born to Run",
-  artist: "Bruce Springsteen",
-  year: 1975,
-  sales: 5000000,
-  number_of_hits: 10
-}
+var Thickfreakedness = new Album("Thickfreakedness", "The Black Keys", 2010, 160000, 2);
+var Eliminator = new Album("Eliminator", "ZZ Top",1981,11000000,4);
+var BeTheVoid = new Album("Be The Void", "Dr. Dog",2012,1000000,5);
+var BornToRun =new Album("Born to Run","Bruce Springsteen",1975, 5000000,10)
 
 // Create an array that holds records
 var recordArray = [Eliminator];
@@ -43,7 +33,7 @@ var recordArray = [Eliminator];
 // Add at least two more album objects to the array
 recordArray[recordArray.length] = BeTheVoid;
 recordArray[recordArray.length] = BornToRun;
-
+recordArray[recordArray.length] = Thickfreakedness;
 
 /*
 Create a function that adds a new rating
@@ -66,16 +56,12 @@ var modifyAlbums = function () {
     ratingAdd(recordArray[i], 5);
   }
 };
-
 // Call the function that starts modifying the array
 modifyAlbums();
-  
 // console.log your array of records
 console.log(recordArray);
-
 // Display the new array in the browser
 var recordDom = document.getElementById("records");
-
 /*
  JSON.stringify() is a built-in function
  on all major browsers that parses a complex
